@@ -28,6 +28,19 @@ if (isset($_POST['addType'])) {
     }
     }
 
+    // ta bort itemtypes
+    if (isset($_GET['deltype'])) {
+        $id = filter_input(INPUT_GET, 'deltype', FILTER_SANITIZE_NUMBER_INT);
+        $query = "DELETE FROM itemtypes WHERE id=(:id)";
+        $sth = $db->prepare($query);
+        if ($sth->execute(array(':id' => $id))) {
+            echo "<h4>Item type with id: " . $id . " deleted";
+            } else {
+            echo "<h4>Error</h4>";
+            echo "<pre>" . print_r($sth->errorInfo(), 1) . "</pre>";
+            }
+            }
+
     // Lägg till item
 if (isset($_POST['addItem'])) {
     // query för att lägga till name i itemtypes
@@ -81,7 +94,23 @@ if($result = $db->query($query)){
 
 <hr>
 
+<h4>List categories</h4>
+<?php
+// skriv ut en lista över existerande kategorier med delete länk
+$query = "SELECT * FROM itemtypes ORDER BY name ASC";
+if ($result = $db->query($query)) {
+echo "<ul>";
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+echo '<li>id: ' . $row['id'] . ' type: ' . $row['name'] .
+' <a href="formular.php?deltype=' . $row['id'] .
+'">Delete type</a></li>';
+}
+echo "</ul>";
+}
+//// echo $_GET['deltype'];
 
+
+?>
 
 
 
