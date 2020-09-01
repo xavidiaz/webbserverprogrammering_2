@@ -1,8 +1,6 @@
 <?php
 /* db_lanesystem.php
- * extend PDO */
-
-
+* extend PDO */
 class DB extends PDO
 {
     public function __construct($dbname = "lanesystem")
