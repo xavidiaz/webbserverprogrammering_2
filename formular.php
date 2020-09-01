@@ -107,6 +107,22 @@ echo '<li>id: ' . $row['id'] . ' type: ' . $row['name'] .
 }
 echo "</ul>";
 }
+?>
+
+
+<h4>List items</h4>
+<?php
+// skriv ut en lista över existerande kategorier med delete länk
+$query = "SELECT * FROM items ORDER BY description ASC";
+if ($result = $db->query($query)) {
+echo "<ul>";
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+echo '<li>id: ' . $row['id'] . ' type: ' . $row['description'] .
+' <a href="formular.php?deltype=' . $row['id'] .
+'">Delete type</a></li>';
+}
+echo "</ul>";
+}
 //// echo $_GET['deltype'];
 
 
