@@ -12,16 +12,25 @@ class Template{
                 echo "<b>Template Error: </b>File Inclusion Error.";
             }
         }
-        echo $this->tpl;
+        ////echo $this->tpl; //DEBUGING
     }
     
 
-    function assign(){
+    function assign($_searchString, $_replaceString){
+        if(!empty($_searchString)){
+            $this->assignedValues[strtoupper($_searchString)]= $_replaceString;
 
+        }
+        ////echo var_dump($this->assignedValues); //DEBUGING
     }
 
     function show(){
-
+        if(count($this->assignedValues) > 0){
+            foreach($this->assignedValues as $key => $value){
+                $this->tpl = str_replace('{'.$key.'}', $value, $this->tpl);
+            }
+        }
+        echo $this->tpl;
 
     }
 }
