@@ -1,2 +1,2 @@
 <?php
-echo URLROOT;
+var_dump($data);

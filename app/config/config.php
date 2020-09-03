@@ -1,9 +1,9 @@
 <?php
 // DATEBASE
-define('DB_HOST', '');
-define('DB_USER', '');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
 define('DB_PASW', '');
-define('DB_NAME', '');
+define('DB_NAME', 'lanesystem');
 
 //APPROOT
 define('APPROOT', dirname(dirname(__FILE__)));
