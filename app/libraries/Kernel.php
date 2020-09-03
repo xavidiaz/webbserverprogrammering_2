@@ -1,6 +1,4 @@
 <?php
-echo '<br>';
-echo 'This is Core.php';
 
 class Core
 {

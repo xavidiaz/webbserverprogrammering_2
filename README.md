@@ -66,3 +66,6 @@
 
   - [/app/views/](/app/views/)
     Views files.
+
+    - - [/app/views/pages](/app/views/pages)
+        Page files
