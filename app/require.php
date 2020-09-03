@@ -1,3 +1,8 @@
-<!-- Require necesary files [/app/libraries](/app/libraries/) -->
+<?php
+// Require files [/app/libraries](/app/libraries/)
+require_once 'libraries/Kernel.php';
+require_once 'libraries/Controller.php';
+require_once 'libraries/Database.php';
 
-This is app/index.php
+// Instantiate core class
+$init = new Core();

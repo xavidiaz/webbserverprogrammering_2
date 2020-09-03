@@ -49,7 +49,7 @@
   - [/app/libraries/Controller.php](/app/libraries/Controller.php)
     Base controller Class.
 
-  - [/app/libraries/Core.php](/app/libraries/Core.php)
+  - [/app/libraries/Kernel.php](/app/libraries/Kernel.php)
 
     - Create & format urls
     - load controllers
