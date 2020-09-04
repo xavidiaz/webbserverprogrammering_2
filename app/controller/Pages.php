@@ -13,11 +13,13 @@ class Pages extends Controller
 
         $data = [
             'title' => 'Home page',
-            'users' => 'user'
-
+            'users' => 'user',
         ];
 
         $this->view('pages/index', $data);
+        
+        $other = $this->userModel->getOther();
+       
     }
 
     public function about()
